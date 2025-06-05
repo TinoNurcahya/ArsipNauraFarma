@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Hover</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-group {
+            position: relative;
+            display: inline-block;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        .dropdown-container {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 100;
+            padding: 5px;
+            width: 150px;
+        }
+
+        /* Agar dropdown tetap muncul saat hover */
+        .form-group:hover .dropdown-container {
+            display: block;
+        }
+
+        select, .satuan-lainnya {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .satuan-lainnya {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-group">
+        <label>Satuan</label>
+        <div class="input-box">
+            <span class="icon"><i class="fa-solid fa-list"></i></span>
+        </div>
+        <div class="dropdown-container">
+            <select id="satuan" name="satuan[]" onchange="cekSatuan(this)" on required>
+                <option value="">Pilih Satuan</option>
+                <option value="pcs">Pcs</option>
+                <option value="kg">Kg</option>
+                <option value="box">Box</option>
+                <option value="meter">Meter</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+            <input type="text" class="satuan-lainnya" placeholder="Masukkan satuan lain">
+        </div>
+    </div>
+
+    <script>
+        function cekSatuan(selectElement) {
+            let inputText = selectElement.nextElementSibling;
+            if (selectElement.value === "lainnya") {
+                inputText.style.display = "block";
+            } else {
+                inputText.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
