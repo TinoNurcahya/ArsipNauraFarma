@@ -1,8 +1,8 @@
-# Sistem Pencatatan Barang Masuk di Apotek Naura Farma
+# Sistem Pencatatan Barang Masuk di Apotek Naura Farma 📝
 
-# tool
-• HTML
-• CSS
-• JavaScript
-• PHP
+# Tool 🔧
+• HTML <br>
+• CSS <br>
+• JavaScript <br>
+• PHP <br>
 • MYSQL
